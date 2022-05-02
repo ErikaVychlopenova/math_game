@@ -1,0 +1,314 @@
+
+header{
+    text-align: center;
+    margin-top: 1em;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #eee4c1;
+    font-size: 17px;
+    line-height: 1.6;
+    height: 100vh;
+    margin: 0;
+    user-select: none;
+}
+
+#page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h1{
+    color: #810e05;
+}
+
+ul{
+    margin: 0;
+    list-style-type: none;
+    padding: 0;
+}
+
+.grouped{
+    width: 80%!important;
+}
+
+#game{
+    position: relative;
+    /*margin-top: 1em;*/
+    margin-bottom: 1em;
+    border: 10px double #992E25;
+    border-radius: 30px;
+    height: 20em;
+    width: 85%;
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+}
+
+#equation{
+    border-bottom: 2px inset #992E25;
+    border-radius: 30px;
+    width: 80%;
+    height: 10em;
+    align-items: center;
+    /* align-content: stretch; */
+    /* text-align: center; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    overflow-x: auto;
+}
+
+#signs{
+    border-top: 2px outset #992E25;
+    border-radius: 30px;
+    width: 80%;
+    height: 10em;
+    align-items: center;
+    /* align-content: stretch; */
+    /* text-align: center; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+
+.cards{
+    border-radius: 5px;
+    padding: 0.5em;
+    margin: 0.1em;
+    width: 1.5em !important;
+    height: 2em;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 3px 3px 0 0 rgba(159, 156, 156, 0.82);
+}
+
+#errorMsg{
+    text-align: center;
+    min-width: 0.5em;
+    min-height: 2em;
+}
+
+#levelCount{
+    position: absolute;
+    left: 1em;
+    top: 0.5em;
+}
+
+.insertCard{
+    border: 3px solid #270473!important;
+    background-color: #8766ce!important;
+}
+
+#signs > .cards{
+    border: 3px solid #275401;
+    background-color: #88b762;
+}
+#signs > .cards:hover{
+    cursor: pointer;
+}
+#equation > .cards{
+    border: 3px solid #730408;
+    background-color: #d57d83;
+}
+
+
+/*Buttons */
+.playButton, .button, .closeButton1, .closeButton2, .closeButton3, .playButton-start {
+    box-shadow: 3px 4px 0 0 #8a2a21;
+    /*box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);*/
+    background: #c62d1f linear-gradient(to bottom, #c62d1f 5%, #f24437 100%);
+    border-radius:18px;
+    border:1px solid #d02718;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family: Arial, sans-serif;
+    font-size:17px;
+    padding:7px 25px;
+    text-decoration:none;
+    text-shadow:0 1px 0 #810e05;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.playButton:hover, .button:hover, .closeButton1:hover, .closeButton2:hover, .closeButton3:hover, .playButton-start:hover {
+    background: #f24437 linear-gradient(to bottom, #f24437 5%, #c62d1f 100%);
+}
+.playButton:active, .button:active, .closeButton1:active, .closeButton2:active, .closeButton3:active, .playButton-start:active {
+    position:relative;
+    top:1px;
+}
+
+
+/* Modal */
+:root {
+    --modal-duration: 1s;
+    --modal-color: #eee4c1;
+}
+
+/*.button {*/
+/*    !*background: #eee4c1;*!*/
+/*    padding: 1em 2em;*/
+/*    color: #ffffff;*/
+/*    border: 0;*/
+/*    border-radius: 5px;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*.button:hover {*/
+/*    background: #eee4c1;*/
+/*}*/
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/*#my-modal-start{*/
+/*    display: block;*/
+/*    background-color: rgba(0, 0, 0, 50);*/
+/*}*/
+
+.modal-content {
+    margin: 5% auto;
+    width: 60%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+    animation-name: modalopen;
+    animation-duration: var(--modal-duration);
+}
+
+.modal-header h2{
+    margin: 0;
+    color: #810e05;
+    /*alignment: center;*/
+}
+
+.modal-header {
+    background: var(--modal-color);
+    padding: 15px;
+    color: #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    align-items: center;
+    text-align: center;
+}
+
+.modal-body {
+    padding: 10px 20px;
+    background: #ffffff;
+    text-align: center;
+}
+
+.modal-footer {
+    background: var(--modal-color);
+    padding: 10px;
+    color: #fff;
+    /*text-align: center;*/
+    /*align-items: center;*/
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    text-align: center;
+}
+
+.close {
+    color: #ccc;
+    float: right;
+    font-size: 30px;
+    /*color: #fff;*/
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes modalopen {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media print  {
+    #game{
+        display: none;
+    }
+    #buttonsUp{
+        display: none;
+    }
+    #buttonsDown{
+        display: none;
+    }
+    #my-modal, #my-modal-hint, #my-modal-answer{
+        display: block;
+        position: relative;
+    }
+    .modal-content{
+        margin: 0 20% 0 20%;
+        padding: 0;
+    }
+    .modal-header{
+        padding: 0;
+        margin: 0 20% 0 20%;
+    }
+    .playButton, .closeButton1, .closeButton2, .closeButton3{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    body{
+        font-size: 140%;
+    }
+
+}
+
+@media screen and (max-width: 400px){
+    #buttonsUp{
+        display: flex;
+        flex-direction: column;
+    }
+    #buttonsDown{
+        display: flex;
+        flex-direction: column;
+    }
+    /*#buttonsDown > button{*/
+    /*    margin-top: 2px;*/
+    /*}*/
+    #equation{
+        justify-content: flex-start;
+    }
+    button{
+        margin-top: 0 !important;
+        margin-bottom: 0.5em !important;
+    }
+    .modal-content{
+        width: 95%;
+        /*font-size: 50% !important;*/
+    }
+
+}
+
+li{
+    list-style-type: none;
+}
+

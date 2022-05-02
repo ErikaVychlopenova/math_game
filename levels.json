@@ -1,0 +1,63 @@
+[
+  {
+    "equation": ["108", "+", "(" ,"13", "+","47",")","+","(","25","+","9",")","+","14","=","0"],
+    "signs": ["+", "-"],
+    "hints": "Add numbers in brackets together, subtract the brackets.",
+    "answer": "108-(13+47)-(25+9)-14=0"
+  },
+  {
+    "equation": ["(","18","-","82",")","+","14","-","86","=","0"],
+    "signs": ["-", "+"],
+    "hints": "Add numbers in bracket together, subtract the other numbers.",
+    "answer": "(18+82)-14-86=0"
+  },
+  {
+    "equation": ["5", "*", "(" ,"4", "-", "9", ")", "+", "24", "*", "62", "=", "3"],
+    "signs": ["+", "-", "*"],
+    "hints": "Multiply the numbers in bracket, add the numbers near the bracket and subtract the other numbers.",
+    "answer": "5+(4*9)+24-62=3"
+  },
+  {
+    "equation": ["49", "/", "(","18" ,"+", "2",")", "+", "62", "=", "120"],
+    "signs": ["+", "/"],
+    "hints": "Divide the numbers in bracket and add the other numbers.",
+    "answer": "49+(18/2)+62=120"
+  },
+  {
+    "equation": ["(", "(", "3","/" ,"3", ")","+", "6", ")", "*", "5","=","3"],
+    "signs": ["+","*", "/"],
+    "hints": "Multiply the numbers in the most inner bracket and add the number. Then divide.",
+    "answer": "((3*3)+6)/5=3"
+  },
+  {
+    "equation": ["(","14","/","41",")","+","5","=","11"],
+    "signs": ["+", "/"],
+    "hints": "Add the numbers in the bracket together and then divide them.",
+    "answer": "(14+41)/5=11"
+  },
+  {
+    "equation": ["(","10", "+","10","/","10",")","/","10","=","11"],
+    "signs": ["+","*","/"],
+    "hints": "This one is a curious one. Multiply and add, then divide.",
+    "answer": "(10*10+10)/10=11"
+  },
+  {
+    "equation": ["2","-","2","+","2","/","(","2","+","2",")","/","2","=","0"],
+    "signs": ["+","-","*","/"],
+    "hints": "Just add the numbers and subtract from them two multiplications and one division.",
+    "answer": "2+2-2*(2*2)/2=0"
+  },
+  {
+    "equation": ["1","+","(","1","+","1",")","+","1","-","1","=","2"],
+    "signs": ["+","-","/"],
+    "hints": "Add, divide, add and subtract.",
+    "answer": "1+(1/1)+1-1=2"
+  },
+  {
+    "equation": ["(","1","-","2","+","3","*","4","+","5","+","6","*","7","+","8","-","9",")","+","5","=","50"],
+    "signs": ["+","-","*","/"],
+    "hints": "Just use one sign.",
+    "answer": "(1+2+3+4+5+6+7+8+9)+5=50"
+  }
+
+]

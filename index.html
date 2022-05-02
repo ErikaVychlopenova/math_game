@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Game made for self developing and as an assignment.">
+    <meta name="theme-color" content="#eee4c1"/>
+    <link rel="apple-touch-icon" href="images/ios/180.png">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <title>Repair the equation!</title>
+    <script defer src="//code.jquery.com/jquery.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+</head>
+<body>
+<header><h1>Repair the Equation!</h1></header>
+
+<div id="page">
+    <!-- Buttons area / hint, answer, submit   -->
+    <div id="buttonsUp">
+        <button id="modal-btn-hint" class="button">Hint</button>
+        <button id="modal-btn-answer" class="button">Answer</button>
+        <button id="btn-submit" class="button">Submit answer</button>
+        <div id="errorMsg"></div>
+
+    </div>
+
+    <!--  Game area   -->
+    <div id="game">
+        <span id="levelCount"></span>
+        <ul id="equation" class="grouped"></ul>
+        <ul id="signs" class="grouped"></ul>
+    </div>
+
+    <!-- Buttons area / how to play, about me   -->
+    <div id="buttonsDown">
+        <button id="modal-btn" class="button">How to play</button>
+        <button id="modal-btn-author" class="button">About me</button>
+    </div>
+
+    <!-- welcome modal window / start -->
+    <div id="my-modal-start" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Let's play:<br>Repair the equation!</h2>
+            </div>
+            <div class="modal-body">
+                <p>We need your help! The equations aren't valid.</p>
+                <p>Your task is to repair the equations by dragging the correct signs in to the correct spots.</p>
+                <p>To continue to the game, click the button below.</p>
+                <p>Good luck!</p>
+            </div>
+            <div class="modal-footer">
+                <button class="playButton-start">Play!</button>
+            </div>
+        </div>
+    </div>
+    <!-- Modal window How to play   -->
+    <div id="my-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>How to play</h2>
+            </div>
+            <div class="modal-body">
+                <p>Your task is to repair the equation by dragging the correct signs in to the correct spots.</p>
+                <p>To check if your answer is right, click the button 'Submit answer'. If the equation isn't valid, you cannot continue to the next level.</p>
+                <p>If the equation is valid, you can proceed to the next level. There is a total of 10 levels, that are randomly selected.</p>
+                <p>The level you are currently on si saved automatically, so if you feel tired and decide to turn off your PC, you can still return to the same level you left on.</p>
+                <p>The randomly generated set of levels is saved too.</p>
+                <p>Remember: The equation must be valid to proceed to the next level!</p>
+            </div>
+            <div class="modal-footer">
+                <button class="playButton">Play!</button>
+            </div>
+        </div>
+    </div>
+    <!-- hint modal window   -->
+    <div id="my-modal-hint" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Hint</h2>
+            </div>
+            <div class="modal-body">
+                <p id="hint">Here is your hint</p>
+            </div>
+            <div class="modal-footer">
+                <button class="closeButton1">Close</button>
+            </div>
+        </div>
+    </div>
+    <!-- answer modal window   -->
+    <div id="my-modal-answer" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Answer</h2>
+            </div>
+            <div class="modal-body">
+                <p id="answer">Here is the answer</p>
+            </div>
+            <div class="modal-footer">
+                <button class="closeButton2">Close</button>
+            </div>
+        </div>
+    </div>
+    <!-- About me modal window   -->
+    <div id="my-modal-author" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>About me</h2>
+            </div>
+            <div class="modal-body">
+                <p>This game was created by Erika V.</p>
+                <p> The inspiration came from math games and puzzles.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="closeButton3">Close</button>
+            </div>
+        </div>
+    </div>
+    <!-- Modal window after success -->
+    <div id="my-modal-continue" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Congratulations!</h2>
+            </div>
+            <div class="modal-body">
+                <p>You have successfully repaired this equation!</p>
+                <p>Click the button bellow to continue to the next level.</p>
+            </div>
+            <div class="modal-footer">
+                <button id="btn-next" class="button">Next level</button>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
